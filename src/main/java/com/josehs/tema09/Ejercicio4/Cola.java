@@ -17,7 +17,7 @@ public class Cola<T> implements ICola<T>{
         colaEnteros.remove();
         colaEnteros.remove();
 
-        System.out.println("Cola después de eliminar elementos: ");
+        System.out.println("Cola después de eliminar algunos elementos: ");
         System.out.println(colaEnteros.cola);
     }
 
@@ -35,9 +35,6 @@ public class Cola<T> implements ICola<T>{
 
     @Override
     public T remove() {
-        if (isEmpty()) {
-            return null;
-        }
         return cola.remove(0);
     }
 
