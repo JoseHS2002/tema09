@@ -27,10 +27,10 @@ public class divisas {
         System.out.println("Dime la cantidad de euros:");
         double euros = scanner.nextDouble();
 
-        for (Map.Entry<String, Double> entrada : cambioEuro.entrySet()) {
-            String moneda = entrada.getKey();
-            double tasa = entrada.getValue();
-            double cantidadConvertida = euros * tasa;
+        for (Map.Entry<String, Double> divisa : cambioEuro.entrySet()) {
+            String moneda = divisa.getKey();
+            double cambio = divisa.getValue();
+            double cantidadConvertida = euros * cambio;
             System.out.println(euros + " EUR = " + cantidadConvertida + " " + moneda);
         }
     }
