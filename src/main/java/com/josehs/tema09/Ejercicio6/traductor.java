@@ -48,9 +48,9 @@ public class traductor {
         scanner.nextLine();
 
         for (int i = 0; i < numParejas; i++) {
-            System.out.print("Introduzca palabra en inglés: ");
+            System.out.print("Introduzca la palabra en inglés: ");
             String palabraIngles = scanner.nextLine();
-            System.out.print("Introduzca traducción al valenciano: ");
+            System.out.print("Introduzca la traducción al valenciano: ");
             String palabraValenciano = scanner.nextLine();
             traductor.put(palabraIngles, palabraValenciano);
         }
