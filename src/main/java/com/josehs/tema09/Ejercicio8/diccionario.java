@@ -54,6 +54,10 @@ public class diccionario {
         System.out.print("Elige una opción: ");
     }
 
+    /**
+     * Anyadir la palabra y su definicion.
+     * @param diccionario
+     */
     private static void anyadirPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra: ");
         String palabra = scanner.nextLine();
@@ -68,6 +72,10 @@ public class diccionario {
         }
     }
 
+    /**
+     * Modifica la definicion de una palabra
+     * @param diccionario
+     */
     private static void modificarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a modificar: ");
         String palabra = scanner.nextLine();
@@ -82,6 +90,10 @@ public class diccionario {
         }
     }
 
+    /**
+     * Borrar una palabra del diccionario
+     * @param diccionario
+     */
     private static void eliminarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a eliminar: ");
         String palabra = scanner.nextLine();
@@ -94,6 +106,10 @@ public class diccionario {
         }
     }
 
+    /**
+     * Consultar una palabra del diccionario y obtener su definicion
+     * @param diccionario
+     */
     private static void consultarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a consultar: ");
         String palabra = scanner.nextLine();
@@ -105,6 +121,10 @@ public class diccionario {
         }
     }
 
+    /**
+     * Mostrar todas las palabras que has puesto hasta ahora y su definicion
+     * @param diccionario
+     */
     private static void mostrarDiccionario(HashMap<String, String> diccionario) {
         if (diccionario.isEmpty()) {
             System.out.println("El diccionario está vacío.");
