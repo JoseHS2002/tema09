@@ -42,6 +42,10 @@ public class traductor {
         System.out.print("Elige una opción: ");
     }
 
+    /**
+     * Introducir la palabra en ingles y su traduccion en valenciano
+     * @param traductor
+     */
     private static void introducirPalabras(HashMap<String, String> traductor) {
         System.out.print("¿Cuántas palabras deseas introducir? ");
         int numPalabras = scanner.nextInt();
@@ -56,6 +60,10 @@ public class traductor {
         }
     }
 
+    /**
+     * Escribir una palabra en ingles y obtener su traduccion en valenciano
+     * @param traductor
+     */
     private static void traducirPalabra(HashMap<String, String> traductor) {
         System.out.print("Palabra a buscar: ");
         String palabraBuscar = scanner.nextLine();
