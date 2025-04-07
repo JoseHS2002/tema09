@@ -44,10 +44,10 @@ public class traductor {
 
     private static void introducirPalabras(HashMap<String, String> traductor) {
         System.out.print("¿Cuántas palabras deseas introducir? ");
-        int numParejas = scanner.nextInt();
+        int numPalabras = scanner.nextInt();
         scanner.nextLine();
 
-        for (int i = 0; i < numParejas; i++) {
+        for (int i = 0; i < numPalabras; i++) {
             System.out.print("Introduzca la palabra en inglés: ");
             String palabraIngles = scanner.nextLine();
             System.out.print("Introduzca la traducción al valenciano: ");
