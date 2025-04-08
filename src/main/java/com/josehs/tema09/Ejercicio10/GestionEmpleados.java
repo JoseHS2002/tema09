@@ -226,20 +226,20 @@ public class GestionEmpleados {
     private void buscarPorNombre() {
         System.out.print("Introduce el nombre: ");
         String nombre = scanner.nextLine();
-        boolean encontrado = false;
+        boolean empleadoEncontrado = false;
         for (Empleado empleado : empleados) {
             if (empleado.getNombre().toLowerCase().contains(nombre.toLowerCase())) {
                 System.out.println(empleado);
-                encontrado = true;
+                empleadoEncontrado = true;
             }
         }
-        if (!encontrado) {
+        if (!empleadoEncontrado) {
             System.out.println("No se encontraron empleados con ese nombre.");
         }
     }
 
     /**
-     * Muestra los datos de los empleados que contengan
+     * Muestra los datos de los empleados que contengan las edades comprendidas en el rango
      */
     private void buscarPorRangoEdad() {
         System.out.print("Introduce la edad mínima: ");
@@ -249,15 +249,15 @@ public class GestionEmpleados {
         int edadMaxima = scanner.nextInt();
         scanner.nextLine();
 
-        boolean encontrado = false;
+        boolean empleadoEncontrado = false;
         for (Empleado empleado : empleados) {
             int edad = Period.between(empleado.getFechaNacimiento(), LocalDate.now()).getYears();
             if (edad >= edadMinima && edad <= edadMaxima) {
                 System.out.println(empleado);
-                encontrado = true;
+                empleadoEncontrado = true;
             }
         }
-        if (!encontrado) {
+        if (!empleadoEncontrado) {
             System.out.println("No se encontraron empleados en ese rango de edad.");
         }
     }
@@ -273,14 +273,14 @@ public class GestionEmpleados {
         double sueldoMaximo = scanner.nextDouble();
         scanner.nextLine();
 
-        boolean encontrado = false;
+        boolean empleadoEncontrado = false;
         for (Empleado empleado : empleados) {
             if (empleado.getSueldo() >= sueldoMinimo && empleado.getSueldo() <= sueldoMaximo) {
                 System.out.println(empleado);
-                encontrado = true;
+                empleadoEncontrado = true;
             }
         }
-        if (!encontrado) {
+        if (!empleadoEncontrado) {
             System.out.println("No se encontraron empleados en ese rango de sueldo.");
         }
     }
@@ -289,17 +289,17 @@ public class GestionEmpleados {
      * Muestra los empleados que tengan hijos menores de edad
      */
     private void buscarPorHijosMenoresEdad() {
-        boolean encontrado = false;
+        boolean empleadoEncontrado = false;
         for (Empleado empleado : empleados) {
             for (Hijo hijo : empleado.getHijos()) {
                 if (hijo.getEdad() < 18) {
                     System.out.println(empleado);
-                    encontrado = true;
+                    empleadoEncontrado = true;
                     break;
                 }
             }
         }
-        if (!encontrado) {
+        if (!empleadoEncontrado) {
             System.out.println("No se encontraron empleados con hijos menores de edad.");
         }
     }
