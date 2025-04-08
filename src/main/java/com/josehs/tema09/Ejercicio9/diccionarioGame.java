@@ -76,6 +76,10 @@ public class diccionarioGame {
         System.out.print("Elige una opción: ");
     }
 
+    /**
+     * Introducir una palabra y su definicion.
+     * @param diccionario
+     */
     private static void anyadirPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra: ");
         String palabra = scanner.nextLine();
@@ -90,6 +94,10 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Cambias la definicion de una palabra
+     * @param diccionario
+     */
     private static void modificarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a modificar: ");
         String palabra = scanner.nextLine();
@@ -104,6 +112,10 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Borras una palabra
+     * @param diccionario
+     */
     private static void eliminarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a eliminar: ");
         String palabra = scanner.nextLine();
@@ -116,6 +128,10 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Muestra la definicion de una palabra introducida
+     * @param diccionario
+     */
     private static void consultarPalabra(HashMap<String, String> diccionario) {
         System.out.print("Introduce la palabra a consultar: ");
         String palabra = scanner.nextLine();
@@ -127,6 +143,10 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Muestra todas las palabras y sus definiciones que se encuentran actualmente en el diccionario
+     * @param diccionario
+     */
     private static void mostrarDiccionario(HashMap<String, String> diccionario) {
         if (diccionario.isEmpty()) {
             System.out.println("El diccionario está vacío.");
@@ -138,6 +158,11 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Metodo para jugar con el diccionario
+     * @param diccionario
+     * @param mejoresPuntuaciones
+     */
     private static void jugar(HashMap<String, String> diccionario, ArrayList<Puntuacion> mejoresPuntuaciones) {
         if (diccionario.isEmpty()) {
             System.out.println("El diccionario está vacío. No se puede jugar.");
@@ -177,11 +202,16 @@ public class diccionarioGame {
         }
     }
 
+    /**
+     * Saca aleatoriamente las palabras que serán utilizadas en el metodo jugar
+     * @param diccionario
+     * @return
+     */
     private static String obtenerPalabraAleatoria(HashMap<String, String> diccionario) {
-        int indiceAleatorio = (int) (Math.random() * diccionario.size());
+        int palabraAleatoria = (int) (Math.random() * diccionario.size());
         int i = 0;
         for (String palabra : diccionario.keySet()) {
-            if (i == indiceAleatorio) {
+            if (i == palabraAleatoria) {
                 return palabra;
             }
             i++;
@@ -189,6 +219,10 @@ public class diccionarioGame {
         return null;
     }
 
+    /**
+     * Ordena sacando de la mayor a la menor puntuacion
+     * @param mejoresPuntuaciones
+     */
     private static void ordenarMejoresPuntuaciones(ArrayList<Puntuacion> mejoresPuntuaciones) {
         Collections.sort(mejoresPuntuaciones, new Comparator<Puntuacion>() {
             @Override
@@ -198,6 +232,10 @@ public class diccionarioGame {
         });
     }
 
+    /**
+     * Muestra las puntuaciones
+     * @param mejoresPuntuaciones
+     */
     private static void mostrarMejoresPuntuaciones(ArrayList<Puntuacion> mejoresPuntuaciones) {
         if (mejoresPuntuaciones.isEmpty()) {
             System.out.println("No hay puntuaciones registradas.");
