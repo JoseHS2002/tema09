@@ -2,7 +2,6 @@ package com.josehs.tema09.Ejercicio11;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -69,18 +68,18 @@ public class Centro {
         System.out.println("6. Mostrar Alumnos por Grupo");
         System.out.println("7. Mostrar Alumnos por Profesor");
         System.out.println("0. Salir");
-        System.out.print("Elige una opción: ");
+        System.out.println("Elige una opción: ");
     }
 
     /**
      * Agrega nuevos profesores
      */
     static void nuevoProfesor() {
-        System.out.print("Introduce el DNI del profesor: ");
+        System.out.println("Introduce el DNI del profesor: ");
         String dni = scanner.nextLine();
-        System.out.print("Introduce el nombre del profesor: ");
+        System.out.println("Introduce el nombre del profesor: ");
         String nombre = scanner.nextLine();
-        System.out.print("Introduce el sueldo del profesor: ");
+        System.out.println("Introduce el sueldo del profesor: ");
         double sueldo = scanner.nextDouble();
         scanner.nextLine();
 
@@ -93,9 +92,9 @@ public class Centro {
      * Agrega nuevas asignaturas y que profesor la imparte
      */
     static void nuevaAsignatura() {
-        System.out.print("Introduce el nombre de la asignatura: ");
+        System.out.println("Introduce el nombre de la asignatura: ");
         String nombre = scanner.nextLine();
-        System.out.print("Introduce el DNI del profesor que imparte la asignatura: ");
+        System.out.println("Introduce el DNI del profesor que imparte la asignatura: ");
         String dniProfesor = scanner.nextLine();
         Profesor profesor = profesores.get(dniProfesor);
         if (profesor == null) {
@@ -112,7 +111,7 @@ public class Centro {
      * Indica el tamaño del aula
      */
     static void nuevaAula() {
-        System.out.print("Introduce los metros cuadrados del aula: ");
+        System.out.println("Introduce los metros cuadrados del aula: ");
         int metrosCuadrados = scanner.nextInt();
         scanner.nextLine();
 
@@ -129,9 +128,9 @@ public class Centro {
      * Agrega nuevos grupos.
      */
     static void nuevoGrupo() {
-        System.out.print("Introduce el nombre del grupo: ");
+        System.out.println("Introduce el nombre del grupo: ");
         String nombre = scanner.nextLine();
-        System.out.print("Introduce el id del aula del grupo: ");
+        System.out.println("Introduce el id del aula del grupo: ");
         int aulaId = scanner.nextInt();
         scanner.nextLine();
         Aula aula = aulas.get(aulaId);
@@ -149,9 +148,9 @@ public class Centro {
      * Agrega nuevos alumnos y que asignaturas asisten.
      */
     static void nuevoAlumno() {
-        System.out.print("Introduce el nombre del alumno: ");
+        System.out.println("Introduce el nombre del alumno: ");
         String nombre = scanner.nextLine();
-        System.out.print("Introduce el id del grupo del alumno: ");
+        System.out.println("Introduce el id del grupo del alumno: ");
         int grupoId = scanner.nextInt();
         scanner.nextLine();
         Grupo grupo = grupos.get(grupoId);
@@ -185,7 +184,7 @@ public class Centro {
      * Muestra informacion de los alumnos que pertenecen a un grupo
      */
     static void mostrarAlumnosPorGrupo() {
-        System.out.print("Introduce el código del grupo: ");
+        System.out.println("Introduce el código del grupo: ");
         int grupoId = scanner.nextInt();
         scanner.nextLine();
         Grupo grupo = grupos.get(grupoId);
@@ -207,7 +206,7 @@ public class Centro {
      * Muestra los alumnos de un profesor
      */
     static void mostrarAlumnosPorProfesor() {
-        System.out.print("Introduce el DNI del profesor: ");
+        System.out.println("Introduce el DNI del profesor: ");
         String dniProfesor = scanner.nextLine();
         Profesor profesor = profesores.get(dniProfesor);
         if (profesor == null) {
